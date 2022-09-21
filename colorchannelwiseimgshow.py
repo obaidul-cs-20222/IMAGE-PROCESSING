@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import matplotlib.pyplot as plt
 im=cv2.imread('ff.jpg')
 cv2.imshow('imagedisplay',im)
 h,w,c=im.shape
@@ -24,6 +25,16 @@ rim = rim.astype(np.uint8)
 gim = gim.astype(np.uint8)
 bim = bim.astype(np.uint8)
         
+
+fig, axs=plt.subplots(1,3)
+
+axs[0].imshow(rim)
+axs[0].set_title('RED IMAGE')
+axs[1].imshow(gim)
+axs[1].set_title('GREEN IMAGE')
+axs[2].imshow(bim)
+axs[2].set_title('BLUE IMAGE')
+plt.waitforbuttonpress()
 
 cv2.imshow('greenImage',gim)
 cv2.imshow('blueImage',bim)
