@@ -1,4 +1,6 @@
-h,w=im.shape
-# nim=np.zeros([h,w])
-
-# print(h,w)
+axs[1,0].imshow(rim)
+# axs[1,0].set_title('RED IMAGE')
+# axs[1,1].imshow(bim)
+# axs[1,1].set_title('GREEN IMAGE')
+# axs[1,2].imshow(gim)
+# axs[1,2].set_title('BLUE IMAGE')
