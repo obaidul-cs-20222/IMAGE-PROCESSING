@@ -33,13 +33,10 @@ def removepadding(img):
 
 def maxfilter(pimg):
     h,w=pimg.shape
-    
     max_filter_image=np.zeros([h,w]).astype(np.uint8)
-   
     for i in range(1,h-1):
         for j in range(1,w-1):
-            maximum,minimum,sum=0,255,0
-            list=[]            
+            maximum=0
             for l in range(i-1,i+2):
                 for k in range(j-1,j+2):
                     if pimg[l,k]>maximum:
