@@ -93,8 +93,11 @@ def imageDivision(grayImg1,grayImg2):
         for j in range(col):
             if grayImg1[i,j]>0:
                 imgDiv[i,j] = int (grayImg2[i,j]) // int(grayImg1[i,j])
+            elif grayImg2[i,j]>0:
+                imgDiv[i,j] = int (grayImg1[i,j]) // int(grayImg2[i,j])
             else:
-                imgDiv[i,j] = int (grayImg2[i,j])
+                imgDiv[i,j] = int (grayImg1[i,j]) // int(grayImg2[i,j])
+
 
 
     return imageNormalisation(imgDiv)
