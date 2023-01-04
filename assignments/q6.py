@@ -2,13 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 
-def main():
+def avg(img1,img2):
+    h,w=img1.shape
+    result=np.zeros([h,w]).astype(np.uint16)
+    for i in range(h):
+        for j in range(w):
+            result[i,j]=(int(img1[i,j])+int(img2[i,j]))//2
+    return result
+
+if __name__ == '__main__':
     img1=cv2.imread('img1.jpg',0)
     img2=cv2.imread('img2.jpg',0)
-  #  img1=cv2.resize(img1,(256,256))
-   # img2=cv2.resize(img2,(256,256))
-
-    result=avg(img1,img2)
+    result = avg(img1,img2)
 
     fig = plt.figure(figsize=(30, 18))
     pltX = 1
@@ -31,14 +36,3 @@ def main():
                                  
     fig.show()
     fig.waitforbuttonpress()
-
-
-def avg(img1,img2):
-    h,w=img1.shape
-    result=np.zeros([h,w]).astype(np.uint8)
-    for i in range(h):
-        for j in range(w):
-            result=(int(img1[i,j])+int(img2[i,j]))//2
-    return result
-
-main()
