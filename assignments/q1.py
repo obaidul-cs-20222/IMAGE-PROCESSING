@@ -25,14 +25,6 @@ def gray_conversion(red,green,blue):
             gray_image[i,j]=red[i,j]*0.3+green[i,j]*0.59+blue[i,j]*0.11
     return gray_image
 
-# def binary_conversion(img):
-#     h,w,chan=img.shape
-#     binary_img=np.zeros([h,w],dtype=np.uint8)
-#     for i in range(h):
-#         for j in range(w):
-        
-
-
 def gray_to_binary(img):
     binary_img=img
     a=int(input("enter the threshhold value: "))
@@ -54,7 +46,7 @@ def main():
 
     fig = plt.figure(figsize=(18, 18))
     pltX = 1
-    pltY = 3
+    pltY = 4
     fig.add_subplot(pltX, pltY, 1)
     plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     plt.axis('off')
@@ -70,6 +62,11 @@ def main():
     plt.imshow(cv2.cvtColor(binary_image,cv2.COLOR_BGR2RGB ))
     plt.axis('off')
     plt.title(" GRAY SCALE IMAGE TO BINARY IMAGE ")
+    bin1=gray_to_binary(gray_image)
+    fig.add_subplot(pltX, pltY, 4)
+    plt.imshow(cv2.cvtColor(binary_image,cv2.COLOR_BGR2RGB ))
+    plt.axis('off')
+    plt.title(" RGB IMAGE TO BINARY IMAGE ")
     fig.show()
     fig.waitforbuttonpress()
 
